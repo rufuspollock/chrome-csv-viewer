@@ -1,0 +1,19 @@
+{
+  "name": "CSV Preview",
+  "version": "0.1",
+  "description": "Converts and previews csv files (.csv) to HTML right inside Chrome.",
+  "icons": {
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*", "file://*/*"
+      ],
+      "js": ["csvify.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ]
+}
