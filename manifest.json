@@ -1,7 +1,7 @@
 {
-  "name": "CSV Preview",
+  "name": "CSV Viewer",
   "version": "0.1",
-  "description": "Converts and previews csv files (.csv) to HTML right inside Chrome.",
+  "description": "Allows viewing csv files (.csv) directly inside Chrome.",
   "icons": {
   },
   "content_scripts": [
