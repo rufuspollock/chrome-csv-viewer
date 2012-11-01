@@ -8,5 +8,5 @@ Automatically presents CSV files in browser.
 2. Check "Allow access to file URLs" in `chrome://extensions` listing
 3. Open local or remote csv files in Chrome.
 
-[webstore]: https://chrome.google.com/webstore/detail/jmchmkecamhbiokiopfpnfgbidieafmd
+[webstore]: TODO
 
