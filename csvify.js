@@ -3,6 +3,9 @@
     if (evt.target.href.match(/.csv$/)) {
       evt.preventDefault();
       evt.stopPropagation();
+      // let's still update the browser url
+      window.history.pushState("", "", evt.target.href);
+      // now load the CSV and display it
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         try {
