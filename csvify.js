@@ -1,6 +1,6 @@
 (function(document) {
   document.addEventListener('click', function(evt) {
-    if (evt.target.href.match(/.csv$/)) {
+    if (evt.target.href && evt.target.href.match(/.csv$/)) {
       evt.preventDefault();
       evt.stopPropagation();
       // let's still update the browser url
