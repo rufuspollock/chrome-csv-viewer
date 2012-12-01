@@ -4,7 +4,10 @@
       evt.preventDefault();
       evt.stopPropagation();
       // let's still update the browser url
-      window.history.pushState("", "", evt.target.href);
+      // For file:/// urls window.history.pushState leads to a silent error which prevents further execution so we need to wrap in if statement
+      try {
+        window.history.pushState("", "", evt.target.href);
+      } catch(e) {}
       // now load the CSV and display it
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
