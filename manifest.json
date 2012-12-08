@@ -1,6 +1,6 @@
 {
   "name": "CSV Viewer",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Allows viewing csv files (.csv) directly inside Chrome.",
   "manifest_version": 2,
   "icons": {
@@ -13,8 +13,15 @@
       "js": ["csvify.js"]
     }
   ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
   "permissions": [
     "tabs",
-    "<all_urls>"
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking"
   ]
 }
