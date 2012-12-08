@@ -2,6 +2,7 @@
   "name": "CSV Viewer",
   "version": "0.1",
   "description": "Allows viewing csv files (.csv) directly inside Chrome.",
+  "manifest_version": 2,
   "icons": {
   },
   "content_scripts": [
