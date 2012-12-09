@@ -17,7 +17,6 @@
 }(document));
 
 function makeView(datasetInfo) {
-  console.log('here');
   var dataset = new recline.Model.Dataset({
     records: datasetInfo.records
   });
@@ -37,6 +36,6 @@ function makeView(datasetInfo) {
     views: views
   });
 
-  dataset.query({size: datasetInfo.records.length - 1});
+  dataset.query({size: Math.min(datasetInfo.records.length - 1, 10000)});
 }
 
