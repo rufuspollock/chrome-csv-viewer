@@ -1,6 +1,42 @@
 (function(document) {
   var state = recline.View.parseQueryString(decodeURIComponent(window.location.search));
   chrome.extension.sendMessage({command: 'getData', url: state.url}, function(response) {
-    document.body.innerHTML = '<pre>' + response + '</pre>';
+    var records = null;
+    try {
+      records = recline.Backend.CSV.parseCSV(response);
+    } catch(e) {
+      console.log(e);
+      alert('Failed to parse CSV file ...');
+    }
+    if (records) {
+      makeView({records: records});
+    } else {
+      document.body.innerHTML = '<pre>' + response + '</pre>';
+    }
   });
 }(document));
+
+function makeView(datasetInfo) {
+  console.log('here');
+  var dataset = new recline.Model.Dataset({
+    records: datasetInfo.records
+  });
+  var views = [
+     {
+       id: 'grid',
+       label: 'Grid', 
+       view: new recline.View.SlickGrid({
+         model: dataset
+       })
+     }
+  ];
+
+  this.grid = new recline.View.MultiView({
+    el: jQuery('.recline-multiview-here'),
+    model: dataset,
+    views: views
+  });
+
+  dataset.query({size: datasetInfo.records.length - 1});
+}
+

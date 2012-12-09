@@ -1,7 +1,7 @@
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   // dispatch based on command
   if (request.command == 'showCSV') {
-    chrome.tabs.update({ 
+    chrome.tabs.create({ 
       url: chrome.extension.getURL('viewer.html')
         + "?url=" + request.url
     });

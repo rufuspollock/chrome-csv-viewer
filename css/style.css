@@ -1,0 +1,17 @@
+/* we do not have a LH sidebar */
+.container-fluid > .content {
+  margin-left: 0;
+}
+
+.recline-slickgrid {
+  height: 640px;
+}
+
+.recline-data-explorer .header .navigation {
+  display: none;
+}
+
+.recline-data-explorer {
+  margin-top: 5px;
+}
+
