@@ -27,6 +27,20 @@ function makeView(datasetInfo) {
        view: new recline.View.SlickGrid({
          model: dataset
        })
+     },
+     {
+       id: 'graph',
+       label: 'Graph',
+       view: new recline.View.Graph({
+         model: dataset
+       })
+     },
+     {
+       id: 'map',
+       label: 'Map',
+       view: new recline.View.Map({
+         model: dataset
+       })
      }
   ];
 
