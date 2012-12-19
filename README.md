@@ -29,3 +29,10 @@ The approach of this extension is therefore:
   extension)
 * Render the CSV in page
 
+# Building
+
+To build the ZIP file for the Chrome webstore do:
+
+    ./make
+
+ZIP file will be in dist
