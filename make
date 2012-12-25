@@ -3,7 +3,7 @@
 
 mkdir -p tmp
 mkdir -p dist
-cp -a css *.js manifest.json *.html tmp/
+cp -a css *.js manifest.json img *.html tmp/
 mkdir -p tmp/vendor/recline
 cp -a vendor/recline/dist vendor/recline/vendor tmp/vendor/recline
 zip -r dist/recline-csv-viewer.zip tmp/*
