@@ -44,10 +44,19 @@ function makeView(datasetInfo) {
      }
   ];
 
+  var sidebarViews = [{
+    id: 'filterEditor',
+    label: 'Filters',
+    view: new recline.View.FilterEditor({
+      model: dataset
+    })
+  }];
+
   this.grid = new recline.View.MultiView({
     el: jQuery('.recline-multiview-here'),
     model: dataset,
-    views: views
+    views: views,
+    sidebarViews: sidebarViews
   });
 
   dataset.query({size: Math.min(datasetInfo.records.length - 1, 10000)});
